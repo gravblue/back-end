@@ -2,6 +2,7 @@ __pycache__/
 *.pyc
 *.pkl
 *.pt
+*.log
 .venv/
 .git/
 .env
