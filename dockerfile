@@ -10,11 +10,12 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Python dependencies
-COPY requirements.txt .
+# Install torch versi CPU langsung dari PyTorch repo
 RUN pip install --upgrade pip && \
-    pip install --no-cache-dir torch==2.2.2+cpu torchvision==0.17.2+cpu -f https://download.pytorch.org/whl/torch_stable.html && \
+    pip install --no-cache-dir torch==2.2.2+cpu torchvision==0.17.2+cpu \
+        -f https://download.pytorch.org/whl/cpu/torch_stable.html && \
     pip install --no-cache-dir -r requirements.txt
+
 
 # Copy application code
 COPY . .
