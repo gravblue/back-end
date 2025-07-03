@@ -1,22 +1,23 @@
 FROM python:3.11-slim
 
+# Set work directory
 WORKDIR /app
 
-# Install basic tools
+# Install build dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
     git \
-    curl \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Install pip packages
+# Install Python dependencies
 COPY requirements.txt .
 RUN pip install --upgrade pip && \
+    pip install --no-cache-dir torch==2.2.2+cpu torchvision==0.17.2+cpu -f https://download.pytorch.org/whl/torch_stable.html && \
     pip install --no-cache-dir -r requirements.txt
 
-# Copy project files
+# Copy application code
 COPY . .
 
-# Jalankan uvicorn server
+# Start FastAPI app
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
