@@ -15,7 +15,7 @@ class Config:
     
     CORS_ORIGINS = ["*"]
     
-    MAX_RECOMMENDATIONS = 20
+    MAX_RECOMMENDATIONS = 10
     MIN_RECOMMENDATIONS = 1
     
     SUPPORTED_EMOTIONS = [
