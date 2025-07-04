@@ -8,7 +8,7 @@ EMOTION_PLAYLIST_IDS = {
     "fear": ["0d29Z9cKf28BPxCgsbmAI5"],
     "love": ["4ARq8N7J63MdGqaB8QSyJH"],
     "surprise": ["5JTerVQbZEZJJwmF8zTRcd"],
-    "neutral": ["0L3k87l5zuVLRSXjpDC6UF"]
+    "neutral": ["5cwPclg5ZtafoBPWgZMHMb"]
 }
 
 def process_track(track):
